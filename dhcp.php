@@ -15,7 +15,7 @@
 	</tr>
 </thead>
 <tbody id="dhcp_hosts">
-	<?php  echo dhcp_hosts_get(); ?>
+	<?php // echo dhcp_hosts_get(); ?>
 </tbody>
 </table>
 <h3>Dodaj rezerwację</h3>
