@@ -19,7 +19,7 @@ function dhcp_host_rm($id) {
 }
 
 function dhcp_hosts_get() {
-	$response = "";
+	$response = ""; 
 	$hosts = shell_exec("$path/management/dhcp/manage.sh hosts get");
 	$hosts = explode("\n", $hosts);
 	for($i = 0; $i < count($hosts)-1; $i++) {
