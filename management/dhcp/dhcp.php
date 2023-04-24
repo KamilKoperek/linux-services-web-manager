@@ -36,7 +36,7 @@ function dhcp_hosts_get() {
 }
 
 function dhcp_range_add($beg, $end) {
-	shell_exec("sudo echo '$beg $end' >> /opt/lampp/htdocs/management/dhcp/ranges.conf");
+	shell_exec("sudo echo '$beg $end' >> /opt/lampp/htdocs/linux-services-web-manager/management/dhcp/ranges.conf");
 }
 
 function dhcp_range_rm($id) {
