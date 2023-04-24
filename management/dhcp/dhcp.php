@@ -1,7 +1,8 @@
 <?php
 session_start();
+$path = '/opt/lampp/htdocs/linux-services-web-manager';
 function dhcp_restart() {
-	return shell_exec("sudo /opt/lampp/management.dhcp/generate.sh");
+	return shell_exec("sudo /opt/lampp/management/dhcp/generate.sh");
 }
 
 function dhcp_status() {
@@ -9,17 +10,17 @@ function dhcp_status() {
 }
 
 function dhcp_host_add($name, $mac, $ip) {
-	shell_exec("sudo echo '$name $mac $ip' >> /opt/lampp/htdocs/management/dhcp/hosts.conf");
+	shell_exec("sudo echo '$name $mac $ip' >> $path/management/dhcp/hosts.conf");
 }
 
 function dhcp_host_rm($id) {
 	$id++;
-	shell_exec("sudo sed -i '".$id."d' /etc/dhcp/conf_gen/hosts.conf");
+	shell_exec("sudo sed -i '".$id."d' $path/management/dhcp/hosts.conf");
 }
 
 function dhcp_hosts_get() {
 	$response = "";
-	$hosts = shell_exec("cat /opt/lampp/htdocs/management/dhcp/hosts.conf");
+	$hosts = shell_exec("$path/management/dhcp/manage.sh hosts get");
 	$hosts = explode("\n", $hosts);
 	for($i = 0; $i < count($hosts)-1; $i++) {
 	 $host = explode(" ", $hosts[$i]);

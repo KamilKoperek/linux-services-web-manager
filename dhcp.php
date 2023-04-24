@@ -1,6 +1,6 @@
 <?php
 	include 'header.php';
-	include 'management/dhcp.php';
+	include 'management/dhcp/dhcp.php';
 ?>
 <h1>DHCP</h1>
 <pre id="dhcp_status"><?=shell_exec("systemctl status isc-dhcp-server")?></pre>
@@ -15,7 +15,7 @@
 	</tr>
 </thead>
 <tbody id="dhcp_hosts">
-	<?php // echo dhcp_hosts_get(); ?>
+	<?php  echo dhcp_hosts_get(); ?>
 </tbody>
 </table>
 <h3>Dodaj rezerwację</h3>
