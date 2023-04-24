@@ -1,7 +1,7 @@
 <?php
 session_start();
 function dhcp_manager($cmd) {
-	return shell_exec("/opt/lampp/htdocs/linux-services-web-manager/management/dhcp/manage.sh $cmd");
+	return shell_exec("sudo /opt/lampp/htdocs/linux-services-web-manager/management/dhcp/manage.sh $cmd");
 }
 
 function dhcp_restart() {
