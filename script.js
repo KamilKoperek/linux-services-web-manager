@@ -13,7 +13,7 @@ function dhcp_host_add() {
 				document.getElementById("dhcp_hosts").innerHTML = this.response;
 			}
 		}
-		xmr.open("GET", `management/dhcp.php?action=host_add&name=${name.value}&mac=${mac.value}&ip=${ip.value}`, true);
+		xmr.open("GET", `management/dhcp/dhcp.php?action=host_add&name=${name.value}&mac=${mac.value}&ip=${ip.value}`, true);
 		xmr.send();
 	}
 }

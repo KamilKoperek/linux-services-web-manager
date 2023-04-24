@@ -19,7 +19,7 @@ function dhcp_host_rm($id) {
 
 function dhcp_hosts_get() {
 	$response = "";
-	$hosts = shell_exec("cat /etc/dhcp/conf_gen/hosts.conf");
+	$hosts = shell_exec("cat /opt/lampp/management/dhcp/hosts.conf");
 	$hosts = explode("\n", $hosts);
 	for($i = 0; $i < count($hosts)-1; $i++) {
 	 $host = explode(" ", $hosts[$i]);
@@ -36,7 +36,7 @@ function dhcp_hosts_get() {
 }
 
 function dhcp_range_add($beg, $end) {
-	shell_exec("sudo echo '$beg $end' >> /etc/dhcp/conf_gen/ranges.conf");
+	shell_exec("sudo echo '$beg $end' >> /opt/lampp/management/dhcp/ranges.conf");
 }
 
 function dhcp_range_rm($id) {
