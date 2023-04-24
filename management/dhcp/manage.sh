@@ -19,4 +19,4 @@ case "$1" in
         cat "/opt/lampp/htdocs/linux-services-web-manager/management/dhcp/hosts.conf"
         ;;
     esac
-esac
+esac 
