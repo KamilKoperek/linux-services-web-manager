@@ -1,5 +1,4 @@
 #!/bin/bash
-path = "/opt/lampp/htdocs/linux-services-web-manager";
 case "$1" in
   "generate")
     config="
@@ -17,7 +16,7 @@ case "$1" in
   "hosts")
     case "$2" in
       "get")
-        cat "$path/manage/dhcp/hosts.conf"
+        cat "/opt/lampp/htdocs/linux-services-web-manager/manage/dhcp/hosts.conf"
         ;;
     esac
 esac
