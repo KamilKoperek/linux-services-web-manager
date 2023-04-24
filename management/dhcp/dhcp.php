@@ -9,7 +9,7 @@ function dhcp_status() {
 }
 
 function dhcp_host_add($name, $mac, $ip) {
-	shell_exec("sudo echo '$name $mac $ip' >> /opt/lampp/management/dhcp/hosts.conf");
+	shell_exec("sudo echo '$name $mac $ip' >> /opt/lampp/htdocs/management/dhcp/hosts.conf");
 }
 
 function dhcp_host_rm($id) {
@@ -19,7 +19,7 @@ function dhcp_host_rm($id) {
 
 function dhcp_hosts_get() {
 	$response = "";
-	$hosts = shell_exec("cat /opt/lampp/management/dhcp/hosts.conf");
+	$hosts = shell_exec("cat /opt/lampp/htdocs/management/dhcp/hosts.conf");
 	$hosts = explode("\n", $hosts);
 	for($i = 0; $i < count($hosts)-1; $i++) {
 	 $host = explode(" ", $hosts[$i]);
