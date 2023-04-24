@@ -19,6 +19,7 @@ function dhcp_host_rm($id) {
 }
 
 function dhcp_hosts_get() {
+	global $path;
 	$response = "";
 	$hosts = shell_exec("$path/management/dhcp/manage.sh hosts get");
 	$hosts = explode("\n", $hosts);
