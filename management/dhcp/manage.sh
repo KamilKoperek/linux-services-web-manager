@@ -24,5 +24,5 @@ case "$1" in
       "rm")
         sudo sed -i "$3d" "/opt/lampp/htdocs/linux-services-web-manager/management/dhcp/hosts.conf"
         ;;
-    esac
+    esac 
 esac

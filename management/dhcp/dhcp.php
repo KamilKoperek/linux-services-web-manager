@@ -18,7 +18,7 @@ function dhcp_host_add($name, $mac, $ip) {
 
 function dhcp_host_rm($id) {
 	$id++;
-	dhcp_manager("host rm $id");
+	dhcp_manager("hosts rm $id");
 }
 
 function dhcp_hosts_get() {
