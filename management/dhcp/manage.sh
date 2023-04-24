@@ -1,5 +1,5 @@
 #!/bin/bash
-case "$1" in 
+case "$1" in
   "generate")
     config="
     default-lease-time 600;
@@ -16,7 +16,7 @@ case "$1" in
   "hosts")
     case "$2" in
       "get")
-        cat "/opt/lampp/htdocs/linux-services-web-manager/manage/dhcp/hosts.conf"
+        cat "/opt/lampp/htdocs/linux-services-web-manager/management/dhcp/hosts.conf"
         ;;
     esac
 esac
