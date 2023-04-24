@@ -2,7 +2,7 @@ function dhcp_host_add() {
 	var name = document.getElementById("dhcp_host_name")
 	var mac = document.getElementById("dhcp_host_mac")
 	var ip = document.getElementById("dhcp_host_ip")
-	
+
 	if(name.value != "" && mac.value != "" && ip.value != "") {
 		var xmr = new XMLHttpRequest()
 		xmr.onreadystatechange = function() {
@@ -32,7 +32,7 @@ function dhcp_host_rm(id) {
 function dhcp_range_add() {
 	var beg = document.getElementById("dhcp_range_beg")
 	var end = document.getElementById("dhcp_range_end")
-	
+
 	if(beg.value != "" && end.value != "") {
 		var xmr = new XMLHttpRequest()
 		xmr.onreadystatechange = function() {
@@ -42,7 +42,7 @@ function dhcp_range_add() {
 				document.getElementById("dhcp_ranges").innerHTML = this.response;
 			}
 		}
-		xmr.open("GET", `management/dhcp.php?action=range_add&beg=${beg.value}&end=${end.value}`, true);
+		xmr.open("GET", `management/dhcp/dhcp.php?action=range_add&beg=${beg.value}&end=${end.value}`, true);
 		xmr.send();
 	}
 }

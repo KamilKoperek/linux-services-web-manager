@@ -1,7 +1,7 @@
 <?php
 session_start();
 function dhcp_restart() {
-	return shell_exec("sudo /etc/dhcp/conf_gen/generate.sh");
+	return shell_exec("sudo /opt/lampp/management.dhcp/generate.sh");
 }
 
 function dhcp_status() {
@@ -9,7 +9,7 @@ function dhcp_status() {
 }
 
 function dhcp_host_add($name, $mac, $ip) {
-	shell_exec("sudo echo '$name $mac $ip' >> /etc/dhcp/conf_gen/hosts.conf");
+	shell_exec("sudo echo '$name $mac $ip' >> /opt/lampp/management/dhcp/hosts.conf");
 }
 
 function dhcp_host_rm($id) {
