@@ -24,7 +24,7 @@ function dhcp_host_rm(id) {
 		if(this.readyState == 4 && this.status == 200)
 			document.getElementById("dhcp_hosts").innerHTML = this.response;
 	}
-	xmr.open("GET", `management/dhcp.php?action=host_rm&id=${id}`, true);
+	xmr.open("GET", `management/dhcp/dhcp.php?action=host_rm&id=${id}`, true);
 	xmr.send();
 }
 
@@ -53,7 +53,7 @@ function dhcp_range_rm(id) {
 		if(this.readyState == 4 && this.status == 200)
 			document.getElementById("dhcp_ranges").innerHTML = this.response;
 	}
-	xmr.open("GET", `management/dhcp.php?action=range_rm&id=${id}`, true);
+	xmr.open("GET", `management/dhcp/dhcp.php?action=range_rm&id=${id}`, true);
 	xmr.send();
 }
 
@@ -65,6 +65,6 @@ function dhcp_refresh(id) {
 		if(this.readyState == 4 && this.status == 200)
 			document.getElementById("dhcp_status").innerHTML = this.response;
 	}
-	xmr.open("GET", `management/dhcp.php?action=status`, true);
+	xmr.open("GET", `management/dhcp/dhcp.php?action=status`, true);
 	xmr.send();
 }
