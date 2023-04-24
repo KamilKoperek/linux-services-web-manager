@@ -20,7 +20,9 @@ case "$1" in
         ;;
       "add")
         echo "$3 $4 $5" >> "/opt/lampp/htdocs/linux-services-web-manager/management/dhcp/hosts.conf"
+        ;;
       "rm")
         sudo sed -i "$3d" "/opt/lampp/htdocs/linux-services-web-manager/management/dhcp/hosts.conf"
+        ;;
     esac
 esac
