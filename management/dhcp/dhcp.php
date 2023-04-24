@@ -20,7 +20,7 @@ function dhcp_host_rm($id) {
 
 function dhcp_hosts_get() {
 	$response = "";
-	$hosts = shell_exec("$path/management/dhcp/manage.sh hosts get");
+	$hosts = shell_exec(".$path/management/dhcp/manage.sh hosts get");
 	$hosts = explode("\n", $hosts);
 	for($i = 0; $i < count($hosts)-1; $i++) {
 	 $host = explode(" ", $hosts[$i]);
