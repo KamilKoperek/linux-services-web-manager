@@ -15,7 +15,7 @@
 	</tr>
 </thead>
 <tbody id="dhcp_hosts">
-	<?php echo dhcp_hosts_get(); ?>
+	<?php // echo dhcp_hosts_get(); ?>
 </tbody>
 </table>
 <h3>Dodaj rezerwację</h3>
@@ -36,7 +36,7 @@ IP:    <br><input type="text" id="dhcp_host_ip" required/><br>
 	</tr>
 </thead>
 <tbody id="dhcp_ranges">
-	<?php echo dhcp_ranges_get(); ?>
+	<?php // echo dhcp_ranges_get(); ?>
 </tbody>
 </table>
 <h3>Dodaj zakres</h3>
