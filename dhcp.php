@@ -1,8 +1,8 @@
-<?php 
+<?php
 	include 'header.php';
 	include 'management/dhcp.php';
 ?>
-<h1>DHCP</h1> 
+<h1>DHCP1</h1> 
 <pre id="dhcp_status"><?=shell_exec("systemctl status isc-dhcp-server")?></pre>
 <button onclick="dhcp_refresh()">Odśwież</button>
 <h2>Rezerwacje</h2>
