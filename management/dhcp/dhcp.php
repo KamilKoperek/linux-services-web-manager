@@ -19,7 +19,7 @@ function dhcp_host_rm($id) {
 }
 
 function dhcp_hosts_get() {
-	$response = ""; 
+	$response = "";
 	$hosts = shell_exec("$path/management/dhcp/manage.sh hosts get");
 	$hosts = explode("\n", $hosts);
 	for($i = 0; $i < count($hosts)-1; $i++) {
@@ -70,6 +70,7 @@ if($_SESSION['admin']) {
 		case 'range_add': dhcp_range_add($_GET['beg'], $_GET['end']); echo dhcp_ranges_get(); dhcp_restart(); break;
 		case 'range_rm': dhcp_range_rm($_GET['id']); echo dhcp_ranges_get(); dhcp_restart(); break;
 		case 'status': echo dhcp_status(); break;
+		case 'host_get': echo dhcp_hosts_get(); break;
 	}
 }
 ?>
