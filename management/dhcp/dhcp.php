@@ -41,23 +41,25 @@ function dhcp_hosts_get() {
 }
 
 function dhcp_range_add($beg, $end) {
-	shell_exec("sudo echo '$beg $end' >> /opt/lampp/htdocs/linux-services-web-manager/management/dhcp/ranges.conf");
+	dhcp_manager("ranges add $beg $end");
 }
 
 function dhcp_range_rm($id) {
 	$id++;
-	shell_exec("sudo sed -i '".$id."d' /etc/dhcp/conf_gen/ranges.conf");
+	dhcp_manager("ranges rm $id");
 }
 
 function dhcp_ranges_get() {
+	global $path;
 	$response = "";
-	$ranges = shell_exec("cat /etc/dhcp/conf_gen/ranges.conf");
+	$ranges = dhcp_manager("ranges get");
 	$ranges = explode("\n", $ranges);
 	for($i = 0; $i < count($ranges)-1; $i++) {
 	 $range = explode(" ", $ranges[$i]);
 	 $response .= "<tr>
 					<td>{$range[0]}</td>
 					<td>{$range[1]}</td>
+					<td>{$range[2]}</td>
 					<td>
 					 <div onclick='dhcp_range_rm($i)'>Usuń</div>
 					</td>

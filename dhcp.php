@@ -36,7 +36,7 @@ IP:    <br><input type="text" id="dhcp_host_ip" required/><br>
 	</tr>
 </thead>
 <tbody id="dhcp_ranges">
-	<?php // echo dhcp_ranges_get(); ?>
+	<?=dhcp_ranges_get();?>
 </tbody>
 </table>
 <h3>Dodaj zakres</h3>
@@ -47,4 +47,4 @@ adres końcowy:   <br><input type="text" id="dhcp_range_end" required/><br>
 </form>
 
 
-<?php include 'footer.php'; ?>
+<?php include 'footer.php';  ?>

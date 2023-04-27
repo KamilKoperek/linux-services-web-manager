@@ -68,3 +68,4 @@ function dhcp_refresh(id) {
 	xmr.open("GET", `management/dhcp/dhcp.php?action=status`, true);
 	xmr.send();
 }
+df
