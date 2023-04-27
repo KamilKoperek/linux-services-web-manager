@@ -1,5 +1,13 @@
 #!/bin/bash
+
 case "$1" in
+  "chk_sum")
+    if [[ $(sum /etc/dhcp/dhcpd.conf) == $(cat /opt/lampp/htdocs/linux-services-web-manager/management/dhcp/sum.txt) ]]; then
+    	echo 1
+    else
+    	echo 0
+    fi
+   ;;    
   "generate")
     config="
     default-lease-time 600;
@@ -12,6 +20,7 @@ case "$1" in
     echo -e $config > /etc/dhcp/dhcpd.conf
     systemctl restart isc-dhcp-server
     systemctl is-active isc-dhcp-server
+    echo $(sum /etc/dhcp/dhcpd.conf) > /opt/lampp/htdocs/linux-services-web-manager/management/dhcp/sum.txt
     ;;
   "hosts")
     case "$2" in

@@ -19,6 +19,6 @@ header a:hover {
 
 section {
 	background-color: #f0f0f0;
-	margin-bottom: 24px;
+	margin: 24px 0 24px 0;
 	padding: 8px;
 }

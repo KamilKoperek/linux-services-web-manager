@@ -10,6 +10,7 @@
 	<title>Panel administracyjny serwera</title>
 	<meta charset="UTF-8"/>
 	<script src="script.js"></script>
+	<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 	<header>
