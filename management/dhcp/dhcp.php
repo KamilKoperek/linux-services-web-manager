@@ -5,7 +5,7 @@ function dhcp_manager($cmd) {
 }
 
 function dhcp_restart() {
-	return shell_exec("sudo /opt/lampp/management/dhcp/generate.sh");
+	return shell_exec("sudo /opt/lampp/htdocs/linux-services-web-manager/management/dhcp/manage.sh generate");
 }
 
 function dhcp_status() {
